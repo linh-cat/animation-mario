@@ -1,0 +1,90 @@
+html, body{
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .grass, .sky, .road{
+    position: relative;
+  }
+  
+  .sky{
+    height: 40%;
+    background: skyblue;
+  }
+  
+  .grass{
+    height: 30%;
+    background: seagreen;
+  }
+  
+  .road{
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+  }
+  
+  .lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+  }
+.mario{
+    width: 60px;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    animation: drive 10s infinite ease-in-out;  
+
+}
+.luigi{
+    width: 60px;
+    position: absolute;
+    top: 140px;
+    left: 10px;
+    animation: drive 20s 1s infinite ease-in-out,
+                drive1 0.5s 6s;
+
+}
+.cloud{
+    position: absolute;    
+}
+.cloud:nth-child(1){
+    width: 100px;
+    top: 150px;
+    left: 100px;
+    opacity: 0.5;
+    animation: wind 30s infinite;
+}
+.cloud:nth-child(2){
+    width: 200px;
+    top: 50px;
+    animation: wind 20s infinite;
+}
+
+
+@keyframes drive {
+    from{transform: translateX(-100px);}
+    to{ transform: translateX(1600px);}
+}
+@keyframes wind{
+    from{left: 0px;}
+    to{left: 1500px;}
+}
+@keyframes drive1{
+    0%{top: 140px;}
+    50%{top: 100px;}
+    100%{top: 140px;}
+}
+@keyframes drive2{
+    0%{top: 30px;}
+    50%{top: 10px;}
+    100%{top: 30px;}
+}
